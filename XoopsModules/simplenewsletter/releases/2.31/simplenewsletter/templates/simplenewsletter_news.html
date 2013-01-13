@@ -1,0 +1,15 @@
+<!-- Created by Instant Zero (http://www.instant-zero.com) -->
+<div class="item">
+	<div class="itemHead"><span class="itemTitle"><{$newsletter.news_title}></span></div>
+	<div class="itemInfo">
+		<span class="itemPostDate"><{$newsletter.news_formated_date}></span>
+		<{if trim($newsletter.news_attachment) != '' }>
+			<br /><a href="<{$newsletter.news_attachment_full_url}>" target="_blank" title="<{$smarty.const._SIMPLENEWSLETTER_ATTACHED_FILE}>"><img src="<{$smarty.const.SIMPLENEWSLETTER_IMAGES_URL}>attach.gif" alt="<{$smarty.const._SIMPLENEWSLETTER_ATTACHED_FILE}>" /> <{$smarty.const._SIMPLENEWSLETTER_ATTACHED_FILE}></a>
+		<{/if}>
+	</div>
+	<div class="itemBody"><p class="itemText"><{$newsletter.news_body}></p></div>
+	<div class="itemFoot"><a href="<{$smarty.const.SIMPLENEWSLETTER_URL}>"><{$smarty.const._SIMPLENEWSLETTER_NEWS_LIST}></a></div>
+</div>
+<{if isset($tagbar) }>
+	<{include file="db:tag_bar.html"}>
+<{/if}>

@@ -1,0 +1,19 @@
+<!-- Created by Instant Zero (http://www.instant-zero.com) -->
+<h2><img style="vertical-align: middle;" src="<{$smarty.const.SIMPLENEWSLETTER_IMAGES_URL}>icons/password.png" alt="" /> <{$smarty.const._SIMPLENEWSLETTER_LOSTPASSWORD}></h2>
+<br /><br />
+
+<form method="post" action="<{$baseurl}>" name="frmLogin" id="frmLogin" class="frmLogin">
+	<input type="hidden" name="op" id="op" value="send" />
+	<fieldset>
+		<legend><{$smarty.const._SIMPLENEWSLETTER_ENTER_YOUR_EMAIL}></legend>		
+		<table>
+		<tr>
+			<td class="fieldLabel"><label for="loginEmail"><{$smarty.const._SIMPLENEWSLETTER_EMAIL}></label> <em>*</em></td>
+			<td><input type="text" name="loginEmail" id="loginEmail" value="" size="40" maxlength="255" /></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="btnPassword" id="btnPassword" value="<{$smarty.const._SIMPLENEWSLETTER_SEND}>" /></td>
+		</tr>						
+		</table>
+	</fieldset>		
+</form>

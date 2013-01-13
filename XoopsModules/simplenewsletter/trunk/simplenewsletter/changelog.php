@@ -1,0 +1,65 @@
+<?php exit(); ?>
+
+***************
+* Version 2.3 *
+***************
+- Ajout d'un test dans la page qui permet de voir le contenu d'une newsletter (côté utilisateur) pour le module TAG
+
+***************
+* Version 2.2 *
+***************
+- Bug correction in the module's administration (in the part used to sew previous newsletters)
+- changelog.txt was renamed to changelog.php
+
+***************
+* Version 2.1 *
+***************
+- Ajout d'un onglet "Blocs" qui permet de gérer les blocs du module
+- Ajout d'une nouvelle option permettant de choisir le séparateur de champs à utiliser pour l'export au format CSV
+- Ajout d'un onglet "Import CSV" permettant d'importer des fichiers CSV d'adresses email
+- Ajout d'une option permettant de choisir la longueur minimale des mots de passe (option utilisée dans le cas des inscriptions d'anonymes)
+- Durant la création d'une newsletter, avant de l'envoyer définitivement, vous pouvez l'envoyer au groupe des webmaster.
+	Par contre, dans ce cas là, les variables des utilisateurs ne sont pas substituées ({UID}, {SUB_DATE}, {MEMBER_SENT}, {MEMBER_UID}, {MEMBER_FIRSTNAME}, {MEMBER_LASTNAME}, {MEMBER_PASSWORD}, {MEMBER_VERIFIED}, {MEMBER_EMAIL}, {MEMBER_TEMPORARY}, {MEMBER_USER_PASSWORD}, {MEMBER_TITLE}, {MEMBER_STREET}, {MEMBER_CITY}, {MEMBER_STATE}, {MEMBER_ZIP}, {MEMBER_TELEPHONE}, {MEMBER_FAX})
+- Ajout de nouveaux champs à la fiche des membres inscrits (titre, adresse, ville, état, code postal, téléphone)
+  et d'une option qui permet de choisir si vous souhaitez utiliser ces nouveaux champs
+
+ Notes :
+	- Vous devez vous rendre au moins une fois dans l'administration du module
+	- Vous devez remettre à jour le module dans le gestionnaire de modules de Xoops
+
+
+***************
+* Version 2.0 *
+***************
+- Les anonymes peuvent maintenant s'inscrire (les personnes ne disposant pas d'un compte Xoops sur le site)
+- Ajout d'une préférence permettant de choisir si les inscriptions des utilisateurs anonymes doivent être vérifiées (auto approbation)
+- Ajout d'une option permettant de demander aux anonymes de saisir un CAPTCHA s'ils veulent s'inscrire
+- Ajout d'une nouvelle préférence permettant de choisir si les inscriptions sont ouvertes aux personnes qui ne sont pas membres du site
+- Il est possible de joindre un fichier à chaque newsletter
+- Les traductions françaises en anglaises du module en UTF8 sont maintenant disponibles dans les répertoires frenchUTF8 et englishUTF8 du module
+   Si vous utilisez ces répertoires, supprimez les répertoires french et english et renommez englishUTF8 et frenchUTF8 en english et french
+- Dans l'administration, la partie permettant de gérer les inscrits a été retravaillée, avec notamment :
+	Ajout de statistiques sur les inscriptions
+	Possibilité de valider l'inscription d'un anonyme depuis l'administration
+	Possibilité d'éditer chaque inscrit
+	Export possible de la liste des inscrits
+	Filtrage des membres
+- Enregistrement du nombre d'envois de chaque newsletter
+- Possibilité d'utiliser, dans tous les mails envoyés, des informations sur les utilisateurs (par exemple, nom, prénom)
+- Les pages côté utilisateur renseignent les metas du site sur la disponibilité d'un flux RSS
+- Notes :
+	- Vous devez vous rendre au moins une fois dans l'administration du module
+	- Vous devez remettre à jour le module dans le gestionnaire de modules de Xoops
+Un grand merci à Klaus pour tous ses tests et sa patience !
+
+
+***************
+* Version 1.2 *
+***************
+- Pour des raisons de comodités, ajout d'une table intermédiaire de travail
+
+***************
+* Version 1.1 *
+***************
+- Ajout de la possibilité d'utiliser le système de TAGS du module TAG de Xoops (il faut aller dans les préférences du module pour l'activer)
+Le module doit être mis à jour dans le gestionnaire de modules de Xoops

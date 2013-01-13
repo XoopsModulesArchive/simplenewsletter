@@ -1,0 +1,12 @@
+<!-- Created by Instant Zero (http://www.instant-zero.com) -->
+<{if $block.uid == 0 && $block.subscriptionState == 0 && !$block.open_subscriptions}>	<{* Utilisateur anonyme, les inscriptions sont fermées *}>
+	<a href="<{$xoops_url}>/register.php"><{$smarty.const._SIMPLENEWSLETTER_STATE_3_DESC}></a>
+<{else}>					<{* Que ce soit un anonyme ou pas, on lui présente le formulaire de connexion *}>
+	<{if $block.member.sub_date != 0}>	<{* Anonyme ou utilisateur enregistré et inscrit *}>
+		<{$smarty.const._SIMPLENEWSLETTER_YOU_ARE}>
+		<br /><a href="<{$smarty.const.SIMPLENEWSLETTER_URL}>subscription.php"><{$smarty.const._SIMPLENEWSLETTER_MANAGE_YOUR_ACCOUNT}></a>
+	<{else}>
+		<{$smarty.const._SIMPLENEWSLETTER_YOU_ARE_NOT}>
+		<br /><a href="<{$smarty.const.SIMPLENEWSLETTER_URL}>subscription.php"><{$smarty.const._SIMPLENEWSLETTER_USE_THIS_PAGE}></a>
+	<{/if}>
+<{/if}>

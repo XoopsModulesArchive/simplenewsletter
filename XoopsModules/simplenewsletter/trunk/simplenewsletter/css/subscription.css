@@ -1,0 +1,19 @@
+label { 
+	font-weight: bold;
+}
+
+label.error { 
+	float: none; 
+	color: #FF0000; 
+	padding-left: .5em; vertical-align: top; 
+}
+
+em { 
+	font-weight: bold; 
+	padding-right: 1em; 
+	vertical-align: top; 
+}
+
+.fieldLabel {
+	text-align: left;
+}

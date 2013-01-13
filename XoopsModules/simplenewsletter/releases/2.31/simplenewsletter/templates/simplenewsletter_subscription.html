@@ -1,0 +1,205 @@
+<!-- Created by Instant Zero (http://www.instant-zero.com) -->
+<h2><img style="vertical-align: middle;" src="<{$smarty.const.SIMPLENEWSLETTER_IMAGES_URL}>icons/email4.png" alt="" /> <{$smarty.const._SIMPLENEWSLETTER_STATE}></h2>
+<br />
+
+<{if $removeSubscription}>
+	<div class="confirmMsg">
+		<{$smarty.const._SIMPLENEWSLETTER_PLEASE_CONFIRM}><br /><br />
+		<form method="post" action="<{$baseurl}>">
+			<input type="hidden" name="op" value="confirmRemove" />
+			<{$securityToken}>				
+			<input type="submit" name="confirm_submit" value="<{$smarty.const._SUBMIT}>" title="<{$smarty.const._SUBMIT}>" />
+			<input type="button" name="confirm_back" value="<{$smarty.const._CANCEL}>" onclick="javascript:history.go(-1);" title="<{$smarty.const._CANCEL}>" />
+		</form>
+	</div>		 
+<{elseif $uid == 0 && $subscriptionState == 0 && !$open_subscriptions}>	<{* Utilisateur anonyme, les inscriptions sont fermées *}>
+	<a href="<{$xoops_url}>/register.php"><{$smarty.const._SIMPLENEWSLETTER_STATE_3_DESC}></a>
+<{else}>					<{* Que ce soit un anonyme ou pas, on lui présente le formulaire de connexion *}>
+	<{if $member.sub_date == 0}>	<{* Anonyme ou utilisateur enregistré mais pas inscrit *}>
+		<{if $uid == 0}>
+			<b><{$smarty.const._SIMPLENEWSLETTER_PLEASE_LOGIN}></b>
+			<br /><br />
+			<form method="post" action="<{$baseurl}>" name="frmLogin" id="frmLogin" class="frmLogin">
+				<input type="hidden" name="op" id="op" value="login" />
+				<fieldset>
+					<legend><{$smarty.const._SIMPLENEWSLETTER_CONNECTION}></legend>		
+					<table>
+					<tr>
+						<td class="fieldLabel"><label for="loginEmail"><{$smarty.const._SIMPLENEWSLETTER_EMAIL}></label> <em>*</em></td>
+						<td><input type="text" name="loginEmail" id="loginEmail" value="" size="40" maxlength="255" /></td>
+					</tr>
+					<tr>
+						<td class="fieldLabel"><label for="loginPassword"><{$smarty.const._SIMPLENEWSLETTER_PASSWORD_SIMPLE}></label> <em>*</em></td>
+						<td><input type="password" name="loginPassword" id="loginPassword" value="" size="40" maxlength="255" /></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" name="btnConnection" id="btnConnection" value="<{$smarty.const._SIMPLENEWSLETTER_CONNECTION}>" /></td>
+					</tr>						
+					</table>
+					<br /><br />
+					<a href="<{$smarty.const.SIMPLENEWSLETTER_URL}>forgotten.php" title="<{$smarty.const._SIMPLENEWSLETTER_LOSTPASSWORD}>"><{$smarty.const._SIMPLENEWSLETTER_LOSTPASSWORD}></a>
+				</fieldset>		
+			</form>
+			<script type="text/javascript">
+				jQuery().ready(function() {
+				jQuery("#frmLogin").validate({
+					rules: {
+						loginEmail: {
+							required: true,
+							email: true
+						},
+						loginPassword: {
+							required: true,
+							minlength: <{$password_length}> 
+						}
+					},
+					messages: {
+						loginEmail: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE5}>",
+						loginPassword: {
+							required: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE2}>",
+							minlength: "<{$password_length_message}>"
+						},
+					}
+				});
+			});
+  			</script>		
+			<br />
+		<{/if}>			
+	<{else}>
+		<p><{$smarty.const._SIMPLENEWSLETTER_YOU_ARE_SUBSCRIBED}></p>
+	<{/if}>
+
+	<{if $member.sub_date == 0}>	
+		<b><{$smarty.const._SIMPLENEWSLETTER_YOU_ARE_NOT_SUBSCRIBED}></b><br /><br />
+	<{/if}>									
+
+	<form method="post" action="<{$baseurl}>" id="frmInformations" class="frmInformations">
+		<fieldset>
+			<legend><{$smarty.const._SIMPLENEWSLETTER_INFORMATION}></legend>		
+			<table>
+			<tr>
+				<td class="fieldLabel"><label for="member_firstname"><{$smarty.const._SIMPLENEWSLETTER_FIRST_NAME}></label> <em>*</em></td>
+				<td><input class="required" type="text" name="member_firstname" id="member_firstname" value="<{$member.member_firstname}>" size="40" maxlength="255" /></td>
+			</tr>
+			<tr>
+				<td class="fieldLabel"><label for="member_lastname"><{$smarty.const._SIMPLENEWSLETTER_LAST_NAME}></label></td>
+				<td><input type="text" name="member_lastname" id="member_lastname" value="<{$member.member_lastname}>" size="40" maxlength="255" /></td>
+			</tr>
+			<tr>
+				<td class="fieldLabel"><label for="member_email"><{$smarty.const._SIMPLENEWSLETTER_EMAIL}></label> <em>*</em></td>
+				<td><input class="required" type="text" name="member_email" id="member_email" value="<{$member.member_email}>" size="40" maxlength="255" /></td>
+			</tr>
+			<{if $additional_fields }>
+				<tr>
+					<td class="fieldLabel"><label for="member_title"><{$smarty.const._SIMPLENEWSLETTER_MEMBER_TITLE}></label></td>
+					<td><input type="text" name="member_title" id="member_title" value="<{$member.member_title}>" size="40" maxlength="50" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel"><label for="member_street"><{$smarty.const._SIMPLENEWSLETTER_MEMBER_STREET}></label></td>
+					<td><input type="text" name="member_street" id="member_street" value="<{$member.member_street}>" size="40" maxlength="255" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel"><label for="member_zip"><{$smarty.const._SIMPLENEWSLETTER_MEMBER_ZIP}></label></td>
+					<td><input type="text" name="member_zip" id="member_zip" value="<{$member.member_zip}>" size="40" maxlength="50" /></td>
+				</tr>				
+				<tr>
+					<td class="fieldLabel"><label for="member_city"><{$smarty.const._SIMPLENEWSLETTER_MEMBER_CITY}></label></td>
+					<td><input type="text" name="member_city" id="member_city" value="<{$member.member_city}>" size="40" maxlength="255" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel"><label for="member_state"><{$smarty.const._SIMPLENEWSLETTER_MEMBER_STATE}></label></td>
+					<td><input type="text" name="member_state" id="member_state" value="<{$member.member_state}>" size="40" maxlength="100" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel"><label for="member_telephone"><{$smarty.const._SIMPLENEWSLETTER_MEMBER_TELEPHONE}></label></td>
+					<td><input type="text" name="member_telephone" id="member_telephone" value="<{$member.member_telephone}>" size="40" maxlength="50" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel"><label for="member_fax"><{$smarty.const._SIMPLENEWSLETTER_MEMBER_FAX}></label></td>
+					<td><input type="text" name="member_fax" id="member_fax" value="<{$member.member_fax}>" size="40" maxlength="50" /></td>
+				</tr>		
+							
+			<{/if}>			
+			<{if $uid == 0 }>	<{* Pour les anonymes on demande un mot de passe pour gérer son inscription *}>
+				<tr>
+					<td class="fieldLabel"><label for="member_user_password"><{$smarty.const._SIMPLENEWSLETTER_PASSWORD}></label> <em>*</em></td>
+					<td><input type="password" name="member_user_password" id="member_user_password" value="" size="32" maxlength="32" /></td>
+				</tr>
+				<tr>
+					<td class="fieldLabel"><label for="member_user_password_confirm"><{$smarty.const._SIMPLENEWSLETTER_CONFIRM_PASSWORD}></label> <em>*</em></td>
+					<td><input type="password" name="member_user_password_confirm" id="member_user_password_confirm" value="<{$member.member_user_password_confirm}>" size="32" maxlength="32" /></td>
+				</tr>							
+			<{/if}>
+			<{if $with_captcha && $uid == 0 && $member.sub_date == 0}>
+				<tr>
+					<td class="fieldLabel"><label for="captcha"><{$smarty.const._SIMPLENEWSLETTER_PLEASESOLVE}><br /><{$captcha_operation}></label> <em>*</em></td>
+					<td><input class="required" type="text" name="captcha" id="captcha" value="" size="30" maxlength="100" /></td>
+				</tr>				
+			<{/if}>
+			<tr>
+				<td colspan="2" align="center"><br />
+					<{if $member.sub_date != 0 && $uid == 0}><input type="button" name="btnLogout" id="btnLogout" value="<{$smarty.const._SIMPLENEWSLETTER_LOGOUT}>" onclick="location='<{$baseurl}>?op=logout'" /> <{/if}>
+					<{if $member.sub_date != 0}><input type="button" name="btnUnsubscribe" id="btnUnsubscribe" value="<{$smarty.const._SIMPLENEWSLETTER_REMOVE_SUBSCRIPTION}>" onclick="location='<{$baseurl}>?op=unsubscribe'" /> <{/if}>
+					<input type="submit" name="btnGo" id="btnGo" value="<{if $member.sub_date != 0}><{$smarty.const._SIMPLENEWSLETTER_MODIFY}><{else}><{$smarty.const._SIMPLENEWSLETTER_SUBSCRIBE}><{/if}>" />
+				</td>
+			</tr>
+			</table>
+			<br /><i><em>*</em><{$smarty.const._SIMPLENEWSLETTER_REQUIRED_FIELD}></i>
+		</fieldset>				
+	</form>
+	<script type="text/javascript">
+		jQuery().ready(function() {
+			jQuery("#frmInformations").validate({
+				rules: {
+					member_firstname: {
+						required: true,
+						minlength: 2
+					},
+					<{if $uid == 0 && $member.sub_date == 0}>
+					member_user_password: {
+						required: true,
+						minlength: <{$password_length}>
+					},
+					member_user_password_confirm: {
+						required: true,
+						minlength: <{$password_length}>,
+						equalTo: "#member_user_password"
+					},
+					<{/if}>
+					<{if $with_captcha}>
+ 						captcha: {
+							required: true
+						},
+					<{/if}>  						
+					member_email: {
+						required: true,
+						email: true
+					}
+				},
+				messages: {
+					member_firstname: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE1}>",
+					<{if $uid == 0 && $member.sub_date == 0}>
+					member_user_password: {
+						required: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE2}>",
+						minlength: "<{$password_length_message}>"
+					},
+					member_user_password_confirm: {
+						required: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE2}>",
+						minlength: "<{$password_length_message}>",
+						equalTo: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE4}>"
+					},
+					<{/if}>
+					<{if $with_captcha}>
+						captcha: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE6}>",
+					<{/if}>  							
+					member_email: "<{$smarty.const._SIMPLENEWSLETTER_REQUIRED_PLEASE5}>"
+				}
+			});
+			<{if $uid == 0 && $member.sub_date == 0}>  				
+			jQuery("#member_user_password").blur(function() {
+				jQuery("#member_user_password_confirm").valid();
+			});
+			<{/if}>
+		});
+  		</script>		
+<{/if}>	

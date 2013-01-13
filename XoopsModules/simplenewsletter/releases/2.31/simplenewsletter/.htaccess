@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule	^newsletter-([0-9]+)(-).*(\.html)$	newsletter.php?news_id=$1

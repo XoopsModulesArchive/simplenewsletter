@@ -1,0 +1,9 @@
+<!-- Created by Instant Zero (http://www.instant-zero.com) -->
+<ul>
+<{foreach item=newsletter from=$block.block_last_news}>
+	<li><a href="<{$newsletter.news_url_rewrited}>" title="<{$newsletter.news_href_title}>"><{$newsletter.news_title}></a><br /><{$newsletter.news_shorted_newsletter}></li>
+<{/foreach}>
+</ul>
+
+<br />
+<div align="center"><a href="<{$smarty.const.SIMPLENEWSLETTER_URL}>index.php"><{$smarty.const._MB_SIMPLENEWSLETTER_SEE_ALL}></a></div>
