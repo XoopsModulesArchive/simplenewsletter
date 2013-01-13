@@ -2,7 +2,7 @@
 /**
  * ****************************************************************************
  * simplenewsletter - MODULE FOR XOOPS
- * Copyright (c) Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * Copyright (c) Hervé Thouzard of http://www.herve-thouzard.com
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -11,10 +11,10 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @copyright       Hervé Thouzard of http://www.herve-thouzard.com
  * @license         http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package         simplenewsletter
- * @author 			Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @author 			Hervé Thouzard of http://www.herve-thouzard.com
  *
  * Version : $Id:
  * ****************************************************************************
@@ -42,8 +42,8 @@ define("_MI_SIMPLENEWSLETTER_FORM_KOIVI","Koivi Editor");
 define("_MI_SIMPLENEWSLETTER_FORM_TINYEDITOR","TinyEditor");
 
 define("_MI_SIMPLENEWSLETTER_PERPAGE", "Elements count per page");
-define("_MI_SIMPLENEWSLETTER_SENDER_EMAIL", "Expeditor - Email address");
-define("_MI_SIMPLENEWSLETTER_SENDER_NAME", "Expeditor - Name");
+define("_MI_SIMPLENEWSLETTER_SENDER_EMAIL", "Sender - Email address");
+define("_MI_SIMPLENEWSLETTER_SENDER_NAME", "Sender - Name");
 define("_MI_SIMPLENEWSLETTER_URL_REWRITE", "Do you want to use url rewriting ?");
 define("_MI_SIMPLENEWSLETTER_CHAR_CUT", "Characters count of each newsletter to display in the module index page");
 define("_MI_SIMPLENEWSLETTER_WELCOME_EMAIL", "Send a welcome message to subscribers ?");
@@ -68,13 +68,12 @@ define("_MI_SIMPLENEWSLETTER_USE_CAPTCHA", "Do you want to use a CAPTCHA on the 
 define("_MI_SIMPLENEWSLETTER_VALIDATE_BCC", "Send a blind copy of verifications email to this address ?");
 define("_MI_SIMPLENEWSLETTER_VALIDATE_BCC_DSC", "Leave this area if you don't want to receive copies of validations mails");
 
-define("_MI_SIMPLENEWSLETTER_MIME_TYPE", "Autorized mime types");
+define("_MI_SIMPLENEWSLETTER_MIME_TYPE", "Authorized mime types");
 define("_MI_SIMPLENEWSLETTER_MAX_UPLOAD", "Max size of uploads files and pictures");
 define("_MI_SIMPLENEWSLETTER_PATH_ATTACHMENTS", "Path where to save attached files (without trailing slash)");
 define("_MI_SIMPLENEWSLETTER_URL_ATTACHMENTS", "URL where to save attached files (without trailing slash)");
 
 define("_MI_SIMPLENEWSLETTER_CSV_SEP", "Separator for CSV export files");
 define("_MI_SIMPLENEWSLETTER_NEW_FIELDS", "Do you want to use the additional fields ?");
-define("_MI_SIMPLENEWSLETTER_NEWS_FIELDS_DSC", "Title, Streetaddress, City, State, Zip, Telephone, Fax");
+define("_MI_SIMPLENEWSLETTER_NEWS_FIELDS_DSC", "Title, Street address, City, State, Zip, Telephone, Fax");
 define("_MI_SIMPLENEWSLETTER_PASSWORD_MIN_LENGTH", "Minimal password's length ?");
-?>

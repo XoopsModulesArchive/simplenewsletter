@@ -2,7 +2,7 @@
 /**
  * ****************************************************************************
  * simplenewsletter - MODULE FOR XOOPS
- * Copyright (c) Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * Copyright (c) Hervé Thouzard of http://www.herve-thouzard.com
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -11,10 +11,10 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @copyright       Hervé Thouzard of http://www.herve-thouzard.com
  * @license         http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package         simplenewsletter
- * @author 			Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @author 			Hervé Thouzard of http://www.herve-thouzard.com
  *
  * Version : $Id:
  * ****************************************************************************
@@ -37,7 +37,7 @@ if( !defined("SIMPLENEWSLETTER_DIRNAME") ) {
 require SIMPLENEWSLETTER_PATH.'config.php';
 require_once SIMPLENEWSLETTER_PATH.'class/simplenewsletter_utils.php';
 require_once SIMPLENEWSLETTER_PATH.'class/simplenewsletter_handlers.php';
-require_once SIMPLENEWSLETTER_PATH.'class/PEAR.php';
+//require_once SIMPLENEWSLETTER_PATH.'class/PEAR.php';
 
 $simplenewsletter_handler = simplenewsletter_handler::getInstance();
 

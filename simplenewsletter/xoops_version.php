@@ -2,7 +2,7 @@
 /**
  * ****************************************************************************
  * simplenewsletter - MODULE FOR XOOPS
- * Copyright (c) Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * Copyright (c) HervÃ© Thouzard of http://www.herve-thouzard.com
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -11,10 +11,10 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @copyright       HervÃ© Thouzard of http://www.herve-thouzard.com
  * @license         http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package         simplenewsletter
- * @author 			Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @author 			HervÃ© Thouzard of http://www.herve-thouzard.com
  *
  * Version : $Id:
  * ****************************************************************************
@@ -25,15 +25,33 @@ if (!defined('XOOPS_ROOT_PATH')) {
 }
 
 $modversion['name'] = _MI_SIMPLENEWSLETTER_NAME;
-$modversion['version'] = 2.31;
+$modversion['version'] = 2.32;
 $modversion['description'] = _MI_SIMPLENEWSLETTER_DESC;
-$modversion['author'] = "Hervé Thouzard - Instant Zero (http://www.instant-zero.com)";
+$modversion['author'] = "HervÃ© Thouzard (http://www.herve-thouzard.com)";
 $modversion['credits'] = "Klaus Lamort, Charles Benninghoff";
-$modversion['help'] = '';
-$modversion['license'] = 'Commercial';
+$modversion['help']        = 'page=help';
+$modversion['license']     = 'GNU GPL 2.0 or later';
+$modversion['license_url'] = "www.gnu.org/licenses/gpl-2.0.html/";
 $modversion['official'] = 0;
 $modversion['image'] = 'images/news_subscribe.png';
 $modversion['dirname'] = 'simplenewsletter';
+
+
+$modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
+$modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
+$modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
+//about
+$modversion['release_date']        = '2013/01/12';
+$modversion["module_website_url"]  = "www.xoops.org";
+$modversion["module_website_name"] = "XOOPS";
+$modversion["module_status"]       = "Beta 1";
+$modversion['min_php']             = '5.2';
+$modversion['min_xoops']           = "2.5.5";
+$modversion['min_admin']           = '1.1';
+$modversion['min_db']              = array(
+    'mysql'  => '5.0.7',
+    'mysqli' => '5.0.7'
+);
 
 $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 $modversion['tables'][0] = 'simplenewsletter_members';
@@ -41,6 +59,7 @@ $modversion['tables'][1] = 'simplenewsletter_news';
 $modversion['tables'][2] = 'simplenewsletter_sent';
 
 $modversion['hasAdmin'] = 1;
+$modversion['system_menu'] = 1;
 $modversion['adminindex'] = 'admin/index.php';
 $modversion['adminmenu'] = 'admin/menu.php';
 
@@ -50,7 +69,7 @@ $modversion['adminmenu'] = 'admin/menu.php';
 $cptb = 0;
 
 /**
- * Liste des dernières newsletter
+ * Liste des derniÃ¨res newsletter
  */
 $cptb++;
 $modversion['blocks'][$cptb]['file'] = 'block_simplenewsletter_lastnews.php';
@@ -58,7 +77,7 @@ $modversion['blocks'][$cptb]['name'] = _MI_SIMPLENEWSLETTER_BNAME1;
 $modversion['blocks'][$cptb]['description'] = '';
 $modversion['blocks'][$cptb]['show_func'] = 'b_sn_lastnews_show';
 $modversion['blocks'][$cptb]['edit_func'] = 'b_sn_lastnews_edit';
-$modversion['blocks'][$cptb]['options'] = '5';	// Nombre d'éléments visibles simultanément
+$modversion['blocks'][$cptb]['options'] = '5';	// Nombre d'Ã©lÃ©ments visibles simultanÃ©ment
 $modversion['blocks'][$cptb]['template'] = 'simplenewsletter_block_lastnews.html';
 
 /**
@@ -70,11 +89,11 @@ $modversion['blocks'][$cptb]['name'] = _MI_SIMPLENEWSLETTER_BNAME2;
 $modversion['blocks'][$cptb]['description'] = '';
 $modversion['blocks'][$cptb]['show_func'] = 'b_sn_lastmembers_show';
 $modversion['blocks'][$cptb]['edit_func'] = 'b_sn_lastmembers_edit';
-$modversion['blocks'][$cptb]['options'] = '5';	// Nombre d'éléments visibles simultanément
+$modversion['blocks'][$cptb]['options'] = '5';	// Nombre d'Ã©lÃ©ments visibles simultanÃ©ment
 $modversion['blocks'][$cptb]['template'] = 'simplenewsletter_block_lastmembers.html';
 
 /**
- * Bloc permettant de s'inscrire ou de se désinscrire
+ * Bloc permettant de s'inscrire ou de se dÃ©sinscrire
  */
 $cptb++;
 $modversion['blocks'][$cptb]['file'] = 'block_simplenewsletter_subscribe.php';
@@ -188,10 +207,10 @@ $modversion['templates'][$cptt]['description'] = "Etat de la souscription";
 
 $cptt++;
 $modversion['templates'][$cptt]['file'] = 'simplenewsletter_forgotten.html';
-$modversion['templates'][$cptt]['description'] = "Mot de page oublié";
+$modversion['templates'][$cptt]['description'] = "Mot de page oubliÃ©";
 
 // ********************************************************************************************************************
-// Préférences ********************************************************************************************************
+// PrÃ©fÃ©rences ********************************************************************************************************
 // ********************************************************************************************************************
 $cpto = 0;
 
@@ -217,7 +236,7 @@ $modversion['config'][$cpto]['default'] = 'dhtmltextarea';
 
 
 /**
- * Nombre d'éléments par page
+ * Nombre d'Ã©lÃ©ments par page
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'perpage';
@@ -228,7 +247,7 @@ $modversion['config'][$cpto]['valuetype'] = 'int';
 $modversion['config'][$cpto]['default'] = 15;
 
 /**
- * Adresse email de l'expéditeur
+ * Adresse email de l'expÃ©diteur
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'sender_email';
@@ -239,7 +258,7 @@ $modversion['config'][$cpto]['valuetype'] = 'text';
 $modversion['config'][$cpto]['default'] = '';
 
 /**
- * Nom de l'expéditeur
+ * Nom de l'expÃ©diteur
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'sender_name';
@@ -262,7 +281,7 @@ $modversion['config'][$cpto]['default'] = 0;
 
 
 /**
- * Nombre de caractères à afficher, pour chaque newsletter, dans la page d'index
+ * Nombre de caractÃ¨res Ã  afficher, pour chaque newsletter, dans la page d'index
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'char_cut';
@@ -319,7 +338,7 @@ $modversion['config'][$cpto]['default'] = xoops_makepass();
 
 
 /**
- * Voulez-vous utiliser le système de TAGS ?
+ * Voulez-vous utiliser le systÃ¨me de TAGS ?
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'use_tags';
@@ -419,7 +438,7 @@ $modversion['config'][$cpto]['valuetype'] = 'text';
 $modversion['config'][$cpto]['default'] = XOOPS_UPLOAD_URL;
 
 /**
- * Séparateur CSV
+ * SÃ©parateur CSV
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'csv_sep';
@@ -430,7 +449,7 @@ $modversion['config'][$cpto]['valuetype'] = 'text';
 $modversion['config'][$cpto]['default'] = '|';
 
 /**
- * Voulez-vous utiliser les champs supplémentaires ?
+ * Voulez-vous utiliser les champs supplÃ©mentaires ?
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'additional_fields';
@@ -441,7 +460,7 @@ $modversion['config'][$cpto]['valuetype'] = 'int';
 $modversion['config'][$cpto]['default'] = 0;
 
 /**
- * Voulez-vous utiliser les champs supplémentaires ?
+ * Voulez-vous utiliser les champs supplÃ©mentaires ?
  */
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'password_length';

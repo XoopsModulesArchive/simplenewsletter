@@ -2,7 +2,7 @@
 /**
  * ****************************************************************************
  * simplenewsletter - MODULE FOR XOOPS
- * Copyright (c) Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * Copyright (c) Hervé Thouzard of http://www.herve-thouzard.com
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -11,10 +11,10 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @copyright       Hervé Thouzard of http://www.herve-thouzard.com
  * @license         http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package         simplenewsletter
- * @author 			Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @author 			Hervé Thouzard of http://www.herve-thouzard.com
  *
  * Version : $Id:
  * ****************************************************************************
@@ -35,11 +35,11 @@ define("_SIMPLENEWSLETTER_LAST_NEWSLETTERS", "Last newsletters");
 define("_SIMPLENEWSLETTER_READ_MORE", "Read more");
 define("_SIMPLENEWSLETTER_NO_NEWSLETTER", "Sorry, actually there's no newsletters");
 define("_SIMPLENEWSLETTER_ERROR1", "Missing argument");
-define("_SIMPLENEWSLETTER_ERROR2", "Unkow newsletter");
-define("_SIMPLENEWSLETTER_ERROR3", "You must be a regsitred user of this site to subscribe or unsubscribe");
+define("_SIMPLENEWSLETTER_ERROR2", "Unknown newsletter");
+define("_SIMPLENEWSLETTER_ERROR3", "You must be a registered user of this site to subscribe or unsubscribe");
 define("_SIMPLENEWSLETTER_ERROR4", "Error, you must fill all the required fields");
 define("_SIMPLENEWSLETTER_ERROR5", "Internal error, you are supposed to be subscribed but we can't find your information ! Please contact us");
-define("_SIMPLENEWSLETTER_ERROR6", "Error, this email address is already registred to receive newsletter");
+define("_SIMPLENEWSLETTER_ERROR6", "Error, this email address is already registered to receive newsletter");
 define("_SIMPLENEWSLETTER_ERROR7", "Error, passwords do not match");
 define("_SIMPLENEWSLETTER_ERROR8", "Error, the result of the operation does not correspond with what is expected");
 define("_SIMPLENEWSLETTER_ERROR9", "There was an error while trying to unsubscribe you");
@@ -88,7 +88,7 @@ define("_SIMPLENEWSLETTER_SUBSCRIPTION_OK", "Welcome to our newsletter, you succ
 define("_SIMPLENEWSLETTER_SUBSCRIPTION_MODIFY_OK", "Your information has been changed successfully");
 define("_SIMPLENEWSLETTER_SUBSCRIPTION_MUST_VALIDATE", "Your registration has been recorded, you will receive an email to verify your email address");
 define("_SIMPLENEWSLETTER_LOGOUT", "Logout");
-define("_SIMPLENEWSLETTER_YOU_ARE_DECONNECTED", "You are now deconnected");
+define("_SIMPLENEWSLETTER_YOU_ARE_DECONNECTED", "You are now disconnected");
 define("_SIMPLENEWSLETTER_YOU_ARE_UNSUBCRIBED", "You are now unsubscribed from our newsletter");
 define("_SIMPLENEWSLETTER_PLEASE_CONFIRM_SUBSCRIPTION", "Please confirm your subscription to our newsletter");
 define("_SIMPLENEWSLETTER_SUCCESSFULLY_LOGGED", "You have successfully logged");
@@ -114,4 +114,3 @@ define("_SIMPLENEWSLETTER_MEMBER_TELEPHONE", "Telephone");
 define("_SIMPLENEWSLETTER_MEMBER_FAX", "Fax");
 define("_SIMPLENEWSLETTER_SUBSCRIPTION", "Subscription");
 define("_SIMPLENEWSLETTER_USE_THIS_LINK", "Use this link to manage your subscription");
-?>
