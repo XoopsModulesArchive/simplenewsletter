@@ -1,0 +1,34 @@
+<!-- Created by Instant Zero (http://www.instant-zero.com) -->
+<{if trim($headerMessage) !=  ''}>
+	<div align="center">
+		<{$headerMessage}><br />
+	</div>
+<{/if}>
+
+<h3><{$smarty.const._SIMPLENEWSLETTER_LAST_NEWSLETTERS}></h3>
+
+<{if count($newsletters) > 0}>
+	<{foreach item=newsletter from=$newsletters}>
+	<div class="item">
+		<div class="itemHead"><span class="itemTitle"><a href="<{$newsletter.news_url_rewrited}>" title="<{$newsletter.news_href_title}>" ><{$newsletter.news_title}></a></span></div>
+		<div class="itemInfo">
+			<{if trim($newsletter.news_attachment) != '' }>
+			<a href="<{$newsletter.news_attachment_full_url}>" target="_blank" title="<{$smarty.const._SIMPLENEWSLETTER_ATTACHED_FILE}>"><img src="<{$smarty.const.SIMPLENEWSLETTER_IMAGES_URL}>attach.gif" alt="<{$smarty.const._SIMPLENEWSLETTER_ATTACHED_FILE}>" /></a>
+			<{/if}>
+			<span class="itemPostDate"><{$newsletter.news_formated_date}></span>
+		</div>
+		<div class="itemBody"><p class="itemText"><{$newsletter.news_shorted_newsletter}></p></div>
+		<div class="itemFoot"><a href="<{$newsletter.news_url_rewrited}>" title="<{$newsletter.news_href_title}>" ><{$smarty.const._SIMPLENEWSLETTER_READ_MORE}></a></div>
+	</div>
+	<{/foreach}>
+	<{if $pagenav != ''}>
+		<br />
+		<div align="center"><{$pagenav}></div>
+	<{/if}>
+<{else}>
+	<br /><br />
+	<h4><{$smarty.const._SIMPLENEWSLETTER_NO_NEWSLETTER}></h4>
+<{/if}>
+<br /><br />
+<strong><a href="<{$smarty.const.SIMPLENEWSLETTER_URL}>subscription.php" title="<{$smarty.const._SIMPLENEWSLETTER_SUBSCRIPTION}>"><img style="vertical-align: middle;" src="<{$smarty.const.SIMPLENEWSLETTER_IMAGES_URL}>icons/email4.png" alt="" /> <{$smarty.const._SIMPLENEWSLETTER_USE_THIS_LINK}></a></strong>
+<br />
