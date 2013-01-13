@@ -1,13 +1,13 @@
 Bonjour {MEMBER_FIRSTNAME} {MEMBER_LASTNAME},
 
-Vous avez demandé à vous inscrire à la lettre d'infomations de notre site.
-Afin de vérifier que cette demande a bien été faite par vous-même, nous vous demandons
-de cliquer sur le lien suivant pour marquer votre inscription comme validée :
+Vous avez demandÃ© Ã  vous inscrire Ã  la lettre d'infomations de notre site.
+Afin de vÃ©rifier que cette demande a bien Ã©tÃ© faite par vous-mÃªme, nous vous demandons
+de cliquer sur le lien suivant pour marquer votre inscription comme validÃ©e :
 {VERIFY_URL}
 
 
-Nous vous remercions de votre visite et espérons vous revoir bientôt.
+Nous vous remercions de votre visite et espÃ©rons vous revoir bientÃ´t.
 
-Cet email est généré automatiquement, merci de ne pas y répondre
+Cet email est gÃ©nÃ©rÃ© automatiquement, merci de ne pas y rÃ©pondre
 -------------------------
 {X_SITENAME} ({X_SITEURL})

@@ -2,7 +2,7 @@
 /**
  * ****************************************************************************
  * simplenewsletter - MODULE FOR XOOPS
- * Copyright (c) Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * Copyright (c) Hervé Thouzard of http://www.herve-thouzard.com
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -11,10 +11,10 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @copyright       Hervé Thouzard of http://www.herve-thouzard.com
  * @license         http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package         simplenewsletter
- * @author 			Hervé Thouzard of Instant Zero (http://www.instant-zero.com)
+ * @author 			Hervé Thouzard of http://www.herve-thouzard.com
  *
  * Version : $Id:
  * ****************************************************************************
@@ -25,19 +25,19 @@ define("_AM_SIMPLENEWSLETTER_PREFERENCES", "Preferences");
 define("_AM_SIMPLENEWSLETTER_MAINTAIN", "Maintain tables and cache");
 define("_AM_SIMPLENEWSLETTER_ADMINISTRATION", "Administration");
 define("_AM_SIMPLENEWSLETTER_SAVE_OK", "Data was saved with success");
-define("_AM_SIMPLENEWSLETTER_SAVE_PB","Problem whilesaving data");
+define("_AM_SIMPLENEWSLETTER_SAVE_PB","Problem while saving data");
 define("_AM_SIMPLENEWSLETTER_NOT_FOUND", "Error, data not found");
 define("_AM_SIMPLENEWSLETTER_ACTION","Action");
 define("_AM_SIMPLENEWSLETTER_NEWS_CREATE","Create a newsletter");
 define("_AM_SIMPLENEWSLETTER_NEWS_EDIT","Edit a newsletter");
-define("_AM_SIMPLENEWSLETTER_NEWS_PREVIEW","Preview newsletter before to send it");
+define("_AM_SIMPLENEWSLETTER_NEWS_PREVIEW","Preview newsletter before sending it");
 define("_AM_SIMPLENEWSLETTER_NEWS_BODY","Newsletter content");
-define("_AM_SIMPLENEWSLETTER_SEND_HTML","Send in html ?");
+define("_AM_SIMPLENEWSLETTER_SEND_HTML","Send in HTML?");
 define("_AM_SIMPLENEWSLETTER_SEND_PAQUET","Send by groups of");
 define("_AM_SIMPLENEWSLETTER_SEND","Send");
 define("_AM_SIMPLENEWSLETTER_SAVE","Save");
-define("_AM_SIMPLENEWSLETTER_DELETE_MEMBER","Do you really want to remove this member's inscription ?");
-define("_AM_SIMPLENEWSLETTER_DELETE_NEWSLETTER","Do you really want to delete this newsletter ?");
+define("_AM_SIMPLENEWSLETTER_DELETE_MEMBER","Are you sure to remove this member's subscription ?");
+define("_AM_SIMPLENEWSLETTER_DELETE_NEWSLETTER","Are you sure to delete this newsletter ?");
 define("_AM_SIMPLENEWSLETTER_MEMBERS_LIST","Subscribers list");
 define("_AM_SIMPLENEWSLETTER_MESSAGES","Welcome and goodbye messages");
 define("_AM_SIMPLENEWSLETTER_MESSAGE1","Welcome message");
@@ -46,16 +46,16 @@ define("_AM_SIMPLENEWSLETTER_MESSAGE3","Text to display on the module's index pa
 define("_AM_SIMPLENEWSLETTER_ERROR_1", "Error, no ID");
 define("_AM_SIMPLENEWSLETTER_ERROR_2", "You have already clicked on this link");
 define("_AM_SIMPLENEWSLETTER_ERROR_3", "Error, impossible to create your CSV file");
-define("_AM_SIMPLENEWSLETTER_SENDING", "Actually sending newsletter");
+define("_AM_SIMPLENEWSLETTER_SENDING", "Currently sending newsletter");
 define("_AM_SIMPLENEWSLETTER_STATUS", "Status");
 define("_AM_SIMPLENEWSLETTER_STATUS_SENT", "Sent");
 define("_AM_SIMPLENEWSLETTER_STATUS_NOTSENT", "Currently sending it");
 define("_AM_SIMPLENEWSLETTER_STOP", "Stop");
 define("_AM_SIMPLENEWSLETTER_RELAUNCH", "Relaunch");
 define("_AM_SIMPLENEWSLETTER_SUBSCRIBE_ALL", "Subscribe all members of your website");
-define("_AM_SIMPLENEWSLETTER_CONF_SUBSCRIBE_ALL", "Do you really want to subscribe all members of your website ?");
+define("_AM_SIMPLENEWSLETTER_CONF_SUBSCRIBE_ALL", "Are you sure to subscribe all members of your website ?");
 define("_AM_SIMPLENEWSLETTER_UNSUBSCRIBE_ALL", "Unsubscribe all members");
-define("_AM_SIMPLENEWSLETTER_CONF_UNSUBSCRIBE_ALL", "Do you really want to unsubscribe all members");
+define("_AM_SIMPLENEWSLETTER_CONF_UNSUBSCRIBE_ALL", "Are you sure to unsubscribe all members");
 define("_AM_SIMPLENEWSLETTER_MODIFY", "Modify");
 define("_AM_SIMPLENEWSLETTER_ADD", "Add");
 define("_AM_SIMPLENEWSLETTER_VALIDATION_MESSAGE", "Validation message sent to anonymous users");
@@ -88,7 +88,7 @@ define("_AM_SIMPLENEWSLETTER_CSV_STRINGS_SEP", "Strings separator");
 define("_AM_SIMPLENEWSLETTER_CSV_EMPTY_CONTENT", "Empty the list of current subscribers ?");
 define("_AM_SIMPLENEWSLETTER_FIELDS_MAPPING", "Fields mapping");
 define("_AM_SIMPLENEWSLETTER_ERROR_4", "Error, no file selected or uploaded");
-define("_AM_SIMPLENEWSLETTER_ERROR_5", "Error, the csv file can't be opened");
+define("_AM_SIMPLENEWSLETTER_ERROR_5", "Error, the CSV file can't be opened");
 define("_AM_SIMPLENEWSLETTER_ERROR_6", "Error, impossible to create the member from the line ");
 define("_AM_SIMPLENEWSLETTER_CSV_HELP", "<br />On the left you have the fields list in the databse with an explanation, on the right you must select the mapping field in your file<br /><br />");
 define("_AM_SIMPLENEWSLETTER_CSV_HELP1", "If the upload does not runs, rename your file with a .txt extension or copy it to your 'upload' folder with an FTP program and use the list below");
