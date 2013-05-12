@@ -54,6 +54,6 @@ global $pathIcon16;
 	$icones = array(
 		'edit' => "<img src='". $pathIcon16 . "/edit.png' alt='"._SIMPLENEWSLETTER_EDIT."' align='middle' />",
 		'delete' => "<img src='". $pathIcon16 ."/delete.png' alt='"._SIMPLENEWSLETTER_DELETE."' align='middle' />",
-	    'validate' => "<img src='". $pathIcon16 ."on.png' alt='"._SIMPLENEWSLETTER_VALIDATE."' align='middle' />"
+	    'validate' => "<img src='". $pathIcon16 ."/on.png' alt='"._SIMPLENEWSLETTER_VALIDATE."' align='middle' />"
 	);
 ?>
