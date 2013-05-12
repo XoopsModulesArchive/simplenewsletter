@@ -31,7 +31,7 @@ $modversion['author'] = "Hervé Thouzard (http://www.herve-thouzard.com)";
 $modversion['credits'] = "Klaus Lamort, Charles Benninghoff";
 $modversion['help']        = 'page=help';
 $modversion['license']     = 'GNU GPL 2.0 or later';
-$modversion['license_url'] = "www.gnu.org/licenses/gpl-2.0.html/";
+$modversion['license_url'] = "www.gnu.org/licenses/gpl-2.0.html";
 $modversion['official'] = 0;
 $modversion['image'] = 'images/news_subscribe.png';
 $modversion['dirname'] = 'simplenewsletter';
@@ -44,9 +44,9 @@ $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 $modversion['release_date']        = '2013/01/12';
 $modversion["module_website_url"]  = "www.xoops.org";
 $modversion["module_website_name"] = "XOOPS";
-$modversion["module_status"]       = "Beta 1";
+$modversion["module_status"]       = "Beta 2";
 $modversion['min_php']             = '5.2';
-$modversion['min_xoops']           = "2.5.5";
+$modversion['min_xoops']           = "2.5.6";
 $modversion['min_admin']           = '1.1';
 $modversion['min_db']              = array(
     'mysql'  => '5.0.7',
@@ -217,21 +217,16 @@ $cpto = 0;
 /**
  * Editor to use
  */
+
 $cpto++;
 $modversion['config'][$cpto]['name'] = 'form_options';
 $modversion['config'][$cpto]['title'] = "_MI_SIMPLENEWSLETTER_FORM_OPTIONS";
 $modversion['config'][$cpto]['description'] = '';
 $modversion['config'][$cpto]['formtype'] = 'select';
 $modversion['config'][$cpto]['valuetype'] = 'text';
-$modversion['config'][$cpto]['options'] = array(
-											_MI_SIMPLENEWSLETTER_FORM_DHTML=>'dhtmltextarea',
-											_MI_SIMPLENEWSLETTER_FORM_COMPACT=>'textarea',
-											_MI_SIMPLENEWSLETTER_FORM_HTMLAREA=>'htmlarea',
-											_MI_SIMPLENEWSLETTER_FORM_KOIVI=>'koivi',
-											_MI_SIMPLENEWSLETTER_FORM_FCK=>'fckeditor',
-											_MI_SIMPLENEWSLETTER_FORM_TINYEDITOR=>'tinyeditor',
-											'tinymce' => 'tinymce'
-											);
+xoops_load('xoopseditorhandler');
+$editor_handler = XoopsEditorHandler::getInstance();
+$modversion['config'][$cpto]['options'] = array_flip($editor_handler->getList());
 $modversion['config'][$cpto]['default'] = 'dhtmltextarea';
 
 

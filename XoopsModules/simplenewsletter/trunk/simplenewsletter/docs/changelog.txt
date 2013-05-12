@@ -1,4 +1,15 @@
 ---------------------------------------
+2.32 Beta 2  2013-05-10
+---------------------------------------
+
+- maintenance menu option added in admin (had disappeared in 2.32 Beta 1) (SMEDrieben)
+- edit/delete buttons in subscription tab had disappeared: solved.(SMEDrieben)
+- edit/delete/ok button are now taken from system button (Frameworks/moduleclasses/icons/16) (SMEDrieben)
+- .htaccess moved to a new folder (seo): otherwise it generates an error with php 5.3 (SMEDrieben)
+- wrong names in help files corrected. (SMEDrieben)
+- added: dynamic editor selection (mamba)
+
+---------------------------------------
 2.32 Beta 1  2013-01-12
 ---------------------------------------
 

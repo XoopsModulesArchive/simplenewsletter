@@ -53,7 +53,7 @@ $mainAdmin = new ModuleAdmin();
  */
 function show_footer()
 {
-	echo "<br /><br /><div align='center'><a href='http://www.instant-zero.com' target='_blank' title='Instant Zero'><img src='../images/instantzero.gif' alt='Instant Zero' /></a></div>";
+	echo "<br /><br /><div align='center'><a href='http://www.xoops.org' target='_blank' title='Xoops'><img src='../images/instantzero.gif' alt='Xoops' /></a></div>";
 }
 
 global $xoopsConfig;
@@ -442,6 +442,7 @@ switch($op)
     	xoops_cp_header();
         echo $mainAdmin->addNavigation('main.php?op=old');
     	//simplenewsletter_adminMenu(1);
+        global $pathIcon16;
     	$class = '';
     	$start = isset($_GET['start']) ? intval($_GET['start']) : 0;
 		$itemsCount = $simplenewsletter_handler->h_simplenewsletter_news->getCount();
@@ -465,10 +466,10 @@ switch($op)
 			    $action = "<a href='".$baseurl."?op=launch&id=".$id."'>"._AM_SIMPLENEWSLETTER_RELAUNCH."</a>";
 			} else {
 			    $status = _AM_SIMPLENEWSLETTER_STATUS_NOTSENT;
-                $action = "<a href='".$baseurl."?op=stop&id=".$id."'>"._AM_SIMPLENEWSLETTER_STOP."</a>";
+                $action = "<a href='".$baseurl."?op=stop&id=".$id."'><img src=". $pathIcon16 .'/off.png'." alt='" . _AM_SIMPLENEWSLETTER_STOP . "' title='" . _AM_SIMPLENEWSLETTER_STOP. "' /> </a>";
 			}
-			$actionDelete = "<a href='".$baseurl."?op=delete&id=".$id."' $confDeleteNewsletter>"._DELETE."</a>";
-			$actionEdit = "<a href='".$baseurl."?op=editnewsletter&id=".$id."'>"._EDIT."</a>";
+            $actionDelete = "<a href='".$baseurl."?op=delete&id=".$id."' $confDeleteNewsletter><img src=". $pathIcon16 .'/delete.png'." alt='" . _DELETE . "' title='" . _DELETE. "' /> </a>";
+            $actionEdit = "<a href='".$baseurl."?op=editnewsletter&id=".$id."'><img src=". $pathIcon16 .'/edit.png'." alt='" . _EDIT . "' title='" . _EDIT. "' /> </a>";
 
 			echo "<tr class='".$class."'>\n";
 			echo "<td align='center'>".$id."</td>";
@@ -476,7 +477,7 @@ switch($op)
 			echo "<td><a href='".$item->getUrl()."'>".$item->news_title."</a></td>";
 			echo "<td align='center'>".$status."</td>";
 			echo "<td align='right'>".$item->getVar('news_members_sent')."</td>";
-			echo "<td align='center'>".$action.' - '.$actionDelete.' - '.$actionEdit."</td>";
+			echo "<td align='center'>".$action.'  '.$actionEdit.'  '.$actionDelete."</td>";
 			echo "</tr>\n";
 		}
 		echo "</table>\n";
@@ -827,7 +828,7 @@ switch($op)
     // ****************************************************************************************************************
         xoops_cp_header();
         //simplenewsletter_adminMenu(7);
-		echo "<iframe src='http://www.instant-zero.com/modules/liaise/?form_id=2' width='100%' height='600' frameborder='0'></iframe>";
+		echo "<iframe src='http://www.xoops.org' width='100%' height='600' frameborder='0'></iframe>";
 		//show_footer();
         include_once("admin_footer.php");
 		break;
@@ -895,7 +896,7 @@ switch($op)
 		}
 		simplenewsletter_utils::updateCache();
 		$simplenewsletter_handler->h_simplenewsletter_news->forceCacheClean();
-		simplenewsletter_utils::redirect(_AM_SIMPLENEWSLETTER_SAVE_OK, $baseurl, 2);
+		simplenewsletter_utils::redirect(_AM_SIMPLENEWSLETTER_SAVE_OK, 'index.php', 2);
     	break;
 
     // ****************************************************************************************************************

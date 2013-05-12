@@ -57,6 +57,7 @@ define("_MI_SIMPLENEWSLETTER_ADMENU3", "Messages");
 define("_MI_SIMPLENEWSLETTER_ADMENU4", "Texts");
 define("_MI_SIMPLENEWSLETTER_ADMENU5", "CSV Import");
 define("_MI_SIMPLENEWSLETTER_ADMENU6", "Blocks");
+define("_MI_SIMPLENEWSLETTER_ADMENU7", "Clear Cache");
 
 define("_MI_SIMPLENEWSLETTER_CRON_PASSWORD", "Password for CRON");
 define("_MI_SIMPLENEWSLETTER_CRON_PASSWORD_DSC", "If you use a CRON system, then you <b>must</b> define a password and call the script like this : http://www.example.com/modules/simplenewsletter/cron.php?password=mypassword");

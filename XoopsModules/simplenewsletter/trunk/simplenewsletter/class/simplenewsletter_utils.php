@@ -224,7 +224,7 @@ class simplenewsletter_utils
         	$proxy_ip = $_SERVER['HTTP_COMING_FROM'];
    		}
 		$regs = array();
-   		if (!empty($proxy_ip) && $is_ip = ereg('^([0-9]{1,3}\.){3,3}[0-9]{1,3}', $proxy_ip, $regs) && count($regs) > 0) {
+   		if (!empty($proxy_ip) && $is_ip = preg_match('/^([0-9]{1,3}\.){3,3}[0-9]{1,3}/', $proxy_ip, $regs) && count($regs) > 0) {
 			$the_IP = $regs[0];
 		} else {
    			$the_IP = $_SERVER['REMOTE_ADDR'];
@@ -844,10 +844,10 @@ class simplenewsletter_utils
 		$content = htmlentities($content);	// TODO: Vérifier
 		$content = preg_replace('/&([a-zA-Z])(uml|acute|grave|circ|tilde);/','$1',$content);
 		$content = html_entity_decode($content);
-		$content = eregi_replace('quot',' ', $content);
-		$content = eregi_replace("'",' ', $content);
-		$content = eregi_replace('-',' ', $content);
-		$content = eregi_replace('[[:punct:]]','', $content);
+		$content = preg_replace('/quot/i',' ', $content);
+		$content = preg_replace("/'/i",' ', $content);
+		$content = preg_replace('/-/i',' ', $content);
+		$content = preg_replace('/[[:punct:]]/i','', $content);
 		// Selon option mais attention au fichier .htaccess !
 		// $content = eregi_replace('[[:digit:]]','', $content);
 		$content = preg_replace("/[^a-z|A-Z|0-9]/",'-', $content);
@@ -1051,7 +1051,7 @@ class simplenewsletter_utils
 		$user_id = intval($user_id);
 
 		if($group_id != 0) {
-			$db =& Database::getInstance();
+			$db =& XoopsDatabaseFactory::getDatabaseConnection();
 			$sql = 'DELETE FROM '.$db->prefix('groups_users_link')." WHERE groupid = $group_id AND uid = $user_id";
 			$result = $db->queryF($sql);
 			return $result;
@@ -1077,7 +1077,7 @@ class simplenewsletter_utils
 		$member_handler =& xoops_gethandler('member');
         $group_ids = $member_handler->getGroupsByUser($user_id);
         if (!in_array($group_id, $group_ids)) {
-        	$db =& Database::getInstance();
+        	$db =& XoopsDatabaseFactory::getDatabaseConnection();
 			$sql = 'INSERT INTO '.$db->prefix('groups_users_link')." (linkid, groupid, uid) VALUES (0, $group_id, $user_id)";
 			$result = $db->queryF($sql);
 			return $result;
