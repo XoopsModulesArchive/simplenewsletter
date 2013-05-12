@@ -24,7 +24,7 @@ if (!defined('XOOPS_ROOT_PATH')) {
 	die("XOOPS root path not defined");
 }
 
-include_once XOOPS_ROOT_PATH.'/class/xoopsobject.php';
+include_once XOOPS_ROOT_PATH.'/kernel/object.php';
 //if (!class_exists('Simplenewsletter_XoopsPersistableObjectHandler')) {
 //	include_once XOOPS_ROOT_PATH.'/modules/simplenewsletter/class/PersistableObjectHandler.php';
 //}
